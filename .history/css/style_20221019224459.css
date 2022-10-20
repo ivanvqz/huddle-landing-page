@@ -1,0 +1,69 @@
+:root {
+    --violet: hsl(257, 40%, 49%);
+    --soft-magenta: hsl(300, 69%, 71%);
+
+    --font1: 'Open Sans', sans-serif;
+    --font2: 'Poppins', sans-serif;
+
+    --padding-container: 60px 0;
+}
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font1);
+}
+
+.hero {
+    background-color: var(--violet);
+}
+
+/* todos los elementos tengan un width de 90% y un margin 0 auto */
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    /* para los elementos que se salgan se oculten */
+    overflow: hidden;
+    max-width: 1200px;
+    padding: var(--padding-container);
+}
+
+.nav {
+    --padding-container: 30px 0;
+}
+.nav__logo {
+    width: 150px;
+    display: block;
+}
+
+.hero__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero__img {
+    max-width: 350px;
+    width: 100%;
+    /* para quitar el margen que tiene la imagen */
+    display: block;
+    margin: 0 auto;
+}
+
+.hero__texts {
+    margin: 3.5em 0;
+    color: white;
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 1.7rem;
+    font-family: var(--font2);
+}
+
+.hero__paragraph {
+    line-height: 1.5;
+    margin: 1.2 em;
+}
