@@ -17,6 +17,17 @@ body {
 
 .hero {
     background-color: var(--violet);
+    position: relative; /* for the ::after pseudo element */
+}
+
+.hero::before {
+    content: "";
+    position: absolute; /* position the pseudo element */
+    width: 100%;
+    height: 400px;
+    background-image: url('../images/bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 400px; /* 100% width and 400px height */ 
 }
 
 /* todos los elementos tengan un width de 90% y un margin 0 auto */
@@ -26,8 +37,9 @@ body {
     margin: 0 auto;
     /* para los elementos que se salgan se oculten */
     overflow: hidden;
-    max-width: 1200px;
+    max-width: 1200px; /* para que no se salga del contenedor */
     padding: var(--padding-container);
+    position: relative; /*para que los elementos de container sobrepasen al bgmovile*/
 }
 
 .nav {
@@ -76,4 +88,59 @@ body {
     padding: 1em 6em;
     border-radius: 2em;
     box-shadow: 0 1px 4px rgb(0, 0, 0, .5);
+}
+
+.hero__contact {
+    display: flex;
+    gap: 1.5em;
+}
+
+.hero__link {
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero__icon {
+    width: 23px;
+}
+
+@media (min-width: 768px) {
+    .hero::before{
+        height: 100%;
+        background-image: url('../images/bg-desktop.svg');
+        background-size: 100% 100%;
+    }
+
+    .hero__container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        --pading-container: 20px 60px;
+    }
+
+    .hero__picture {
+        flex-basis: 45%;
+    }
+    
+    .hero__img {
+        max-width: unset;
+    }
+    .hero__texts {
+        flex-basis: 50%;
+        text-align: left;
+    }
+
+    .hero__title {
+        font-size: 2rem;
+    }
+
+    .hero__contact {
+        margin-left: auto;
+    }
 }
